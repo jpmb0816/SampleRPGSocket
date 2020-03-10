@@ -6,14 +6,9 @@ app.use(express.static('public'));
 console.log('Server is running...');
 var socket = require('socket.io');
 var io = socket(server);
-io.sockets.on('connection', newConnection);
-
-function newConnection(socket) {
+io.sockets.on('connection', function(socket) {
 	console.log('New connection: ' + socket.id);
-	socket.on('player', message);
-	
-	function message(data) {
+	socket.on('player', function(data) {
 		socket.broadcast.emit('player', data);
-		//console.log(data);
-	}
-}
+	});
+});

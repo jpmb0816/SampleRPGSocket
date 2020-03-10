@@ -1,4 +1,5 @@
 let socket;
+let canPrint;
 let player;
 let otherPlayer;
 let xposition;
@@ -7,6 +8,7 @@ let status;
 
 function setup() {
 	createCanvas(600, 400);
+	canPrint = true;
 	player = new Player('HuntAndDestroy', 'Red', 0, 0);
 	socket = io.connect('http://192.168.1.142:3000');
 	socket.emit('player', player);
@@ -16,13 +18,30 @@ function setup() {
 	status = document.getElementById('status');
 }
 
+function insertLine(message) {
+	const line = document.createElement('div');
+	line.innerHTML = message;
+	status.appendChild(line);
+	setTimeout(function(){
+		line.style.opacity = 0;
+		line.style.transition = 'opacity 1000ms';
+		setTimeout(function(){
+			line.parentNode.removeChild(line);
+		}, 1000);
+	}, 2000);
+}
+
 function getNewPlayerData(data) {
 	otherPlayer = data;
-	status.innerText = data.name + ' player joined the game.';
+	if (canPrint) {
+		insertLine(data.name + ' player joined the game.');
+		canPrint = false;
+	}
 }
 
 function updatePlayer() {
-	const name = document.getElementById('pname').value;
+	let name = document.getElementById('pname').value;
+	name = (name === undefined) ? "Noobie" : name;
 	const color = document.getElementById('pcolor').value;
 
 	player.name = name;

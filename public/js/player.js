@@ -37,22 +37,22 @@ function Player (name, color, x, y) {
 	this.move = function(event) {
 		switch(keyCode) {
 			case 37:
-			case 65:
+			//case 65:
 				this.velocity.x = (event == 1) ? -this.speed : 0;
 				this.isMoving = (event == 1);
 			break;
 			case 38:
-			case 87:
+			//case 87:
 				this.velocity.y = (event == 1) ? -this.speed : 0;
 				this.isMoving = (event == 1);
 			break;
 			case 39:
-			case 68:
+			//case 68:
 				this.velocity.x = (event == 1) ? this.speed : 0;
 				this.isMoving = (event == 1);
 			break;
 			case 40:
-			case 83:
+			//case 83:
 				this.velocity.y = (event == 1) ? this.speed : 0;
 				this.isMoving = (event == 1);
 			break;

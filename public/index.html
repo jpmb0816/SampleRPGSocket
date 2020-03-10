@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Sample RPG</title>
-	<script src="libraries/p5.js"></script>
-	<script src="libraries/socket.io.js"></script>
-</head>
-<body>
-	<div>
-		<label for="pname">Player Name: </label>
-		<input type="text" id="pname">
-		<label for="pcolor">Player Color: </label>
-		<input type="text" id="pcolor">
-		<input type="button" value="Update" onclick="updatePlayer()">
-	</div>
-	<div>
-		<label>X: </label>
-		<label id="xposition"></label>
-		<label>Y: </label>
-		<label id="yposition"></label>
-	</div>
-	<script src="js/sketch.js"></script>
-	<script src="js/player.js"></script>
-	<div>
-		<label>Status: </label>
-		<label id="status"></label>
-	</div>
-</body>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Sample RPG</title>
+		<link href="css/styles.css" rel="stylesheet">
+		<script src="libraries/p5.js"></script>
+		<script src="libraries/socket.io.js"></script>
+	</head>
+	<body>
+		<div>
+			<label for="pname">Player Name: </label>
+			<input type="text" id="pname">
+			<label for="pcolor">Player Color: </label>
+			<input type="text" id="pcolor">
+			<input type="button" value="Update" onclick="updatePlayer()">
+		</div>
+		<div>
+			<label>X: </label>
+			<label id="xposition"></label>
+			<label>Y: </label>
+			<label id="yposition"></label>
+		</div>
+		<script src="js/sketch.js"></script>
+		<script src="js/player.js"></script>
+		<div id="status"></div>
+	</body>
 </html>

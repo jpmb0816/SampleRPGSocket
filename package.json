@@ -1,0 +1,28 @@
+{
+  "name": "sample-rpg",
+  "version": "1.0.0",
+  "description": "Server Sided Role Playing Game.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpmb0816/sample-rpg.git"
+  },
+  "keywords": [
+    "nodejs",
+    "p5.js",
+    "socket.io"
+  ],
+  "author": "John Paulo Beyong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jpmb0816/sample-rpg/issues"
+  },
+  "homepage": "https://github.com/jpmb0816/sample-rpg#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  }
+}

@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html lang="">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Sample RPG</title>
-		<script src="libraries/p5.js"></script>
-		<script src="libraries/socket.io.js"></script>
-	</head>
-	<body>
-		<!-- <div>
-			<label for="ipaddress">IP Address: </label>
-			<input type="text" id="ipaddress">
-			<label for="port">Port: </label>
-			<input type="text" id="port">
-			<button onclick="connectToSocket()">Connect</button>
-		</div> -->
-		<div>
-			<label>X: </label>
-			<label id="xposition"></label>
-			<label>Y: </label>
-			<label id="yposition"></label>
-		</div>
-		<script src="js/sketch.js"></script>
-		<script src="js/player.js"></script>
-	</body>
+  <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sample RPG</title>
+	<script src="libraries/p5.js"></script>
+	<script src="libraries/socket.io.js"></script>
+  </head>
+  <body>
+	<!-- <div>
+	<label for="ipaddress">IP Address: </label>
+	<input type="text" id="ipaddress">
+	<label for="port">Port: </label>
+	<input type="text" id="port">
+	<button onclick="connectToSocket()">Connect</button>
+	</div> -->
+	<div>
+	  <label>X: </label>
+	  <label id="xposition"></label>
+	  <label>Y: </label>
+	  <label id="yposition"></label>
+	</div>
+	<script src="js/sketch.js"></script>
+	<script src="js/player.js"></script>
+	<div>
+	  <label>Status: </label>
+	  <label id="status"></label>
+	</div>
+  </body>
 </html>

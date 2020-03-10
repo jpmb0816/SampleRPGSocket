@@ -3,15 +3,18 @@ let player;
 let otherPlayer;
 let xposition;
 let yposition;
+let status;
 
 function setup() {
 	createCanvas(600, 400);
 	player = new Player("HuntAndDestroy", "Red", 0, 0);
-	socket = io.connect('http://localhost:3000');
+	//socket = io.connect('http://localhost:3000');
+	socket = io.connect('http://192.168.0.107:3000');
+	socket.emit('player', player);
 	socket.on('player', getNewPlayerData);
-	//socket = io.connect('http://192.168.0.108:3000');
 	xposition = document.getElementById('xposition');
 	yposition = document.getElementById('yposition');
+	status = document.getElementById('status');
 }
 
 // function connectToSocket() {
@@ -23,17 +26,18 @@ function setup() {
 
 function getNewPlayerData(data) {
 	otherPlayer = data;
+	status.innerText = "A player joined the game.";
 }
 
 function draw() {
 	background(112, 146, 190);
+	player.update();
+	player.draw();
 	if (otherPlayer !== undefined) {
 		noStroke();
 		fill(255);
 		rect(otherPlayer.position.x, otherPlayer.position.y, otherPlayer.width, otherPlayer.height);
 	}
-	player.update();
-	player.draw();
 	xposition.innerText = player.position.x;
 	yposition.innerText = player.position.y;
 }

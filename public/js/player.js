@@ -32,7 +32,7 @@ function Player (name, color, x, y) {
 		if (socket !== undefined) {
 			socket.emit('player', this);
 		}
-	}
+	};
 
 	this.move = function(event) {
 		switch(keyCode) {
